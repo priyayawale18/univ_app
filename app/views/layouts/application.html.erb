@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tech University</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body>
+   <header>
+    <!-- Dropdown Structure -->
+    <ul id="dropdown1" class="dropdown-content">
+      <li><a href="#!">one</a></li>
+      <li><a href="#!">two</a></li>
+      <li class="divider"></li>
+      <li><a href="#!">three</a></li>
+
+    </ul>
+    <ul id="dropdown2" class="dropdown-content">
+      <li><a href="#!">one</a></li>
+      <li><a href="#!">two</a></li>
+      <li class="divider"></li>
+      <li><a href="#!">three</a></li>
+
+    </ul>
+        
+    <nav>
+      <div class="container">
+        <div class="nav-wrapper">
+           <a href="#" class="brand-logo right">Tech University</a>
+           <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+           <ul id="nav-mobile" class="left hide-on-med-and-down">
+               <li><a href="sass.html">Courses</a></li>
+               <li><a href="badges.html">Enrollments</a>   </li>
+                <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Dropdown<i class="material-icons right">arrow_drop_down</i></a></li>
+           </ul>
+
+          <ul class="sidenav" id="mobile-demo">
+            <li><a href="sass.html">Courses</a></li>
+            <li><a href="badges.html">Enrollments</a></li>
+            <li><a class="dropdown-trigger" href="#!" data-target="dropdown2">Dropdown<i class="material-icons right">arrow_drop_down</i></a></li>
+          </ul>
+          
+         </div>
+        </div>  
+      </nav>
+     
+  </header>
+  <main>
+     <div class="container">
+       <%= yield %>
+     </div>  
+  </main>      
+
+
+    <%= link_to 'home', root_path %>
+    <%= link_to 'about', about_path %>
+    <%= link_to 'new course', courses_new_path %>
+
+  
+   <%= render 'layouts/footer' %>
+  </body>
+</html>
